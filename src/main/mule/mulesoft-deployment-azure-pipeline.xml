@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="7e5280a8-372f-4795-87f1-771e543967c3" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="mulesoft-deployment-azure-pipelineFlow" doc:id="0b619899-1d8c-4406-8982-ecc69154a6fa" >
+		<http:listener doc:name="Listener" doc:id="5489f2c9-dc64-402a-8464-75ceec621bc1" config-ref="HTTP_Listener_config" path="/mule-azure"/>
+		<logger level="INFO" doc:name="Logger" doc:id="72dd7cc8-6df8-4ebe-a183-08e3aba5a2cf" message='#["Hi....,Welcome to Azure repo"]'/>
+	</flow>
+</mule>
